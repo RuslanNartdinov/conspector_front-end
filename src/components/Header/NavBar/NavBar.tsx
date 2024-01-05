@@ -6,7 +6,7 @@ import NavBarButtons from '../../../helpers/NavBarButtons';
 const NavBar = () => {
 	return (
 		<div className='nav-bar'>
-			{NavBarButtons.map((button)=><NavBarButton button={button}/>)}
+			{NavBarButtons.map((button)=><NavBarButton key={button.key} button={button}/>)}
 		</div>
 	);
 };

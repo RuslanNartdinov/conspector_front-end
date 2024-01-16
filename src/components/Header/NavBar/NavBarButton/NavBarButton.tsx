@@ -11,8 +11,10 @@ import { INavBarButton } from '../../../../helpers/NavBarButtons';
 
 const NavBarButton = (props : {button : INavBarButton}) => {
 	return (
-		<div className='nav-bar_button'>
-			{props.button.name}
+		<div className="nav-bar_button__container">
+			<div className='nav-bar_button'>
+				{props.button.name}
+			</div>
 		</div>
 	);
 };

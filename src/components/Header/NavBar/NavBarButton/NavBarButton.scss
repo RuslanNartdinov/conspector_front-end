@@ -1,9 +1,23 @@
-.nav-bar_button{
+.nav-bar_button__container{
 	height: 100%;
 	width: auto;
-	min-width: 50px;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	.nav-bar_button{
+		height: auto;
+		width: auto;
+		min-width: 50px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		transition-duration: 0.3s;
+		cursor: pointer;
+	}
+	.nav-bar_button:hover{
+		text-shadow: 0 0 15px var(--color-text);
+	}
 }

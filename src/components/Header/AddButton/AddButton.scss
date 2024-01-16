@@ -1,0 +1,13 @@
+.add-button{
+	padding: 10px 5px;
+
+	font-size: 23px;
+	border: 2px solid var(--color-4);
+	border-radius: 7px;
+
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+.add-button:hover{
+	box-shadow: 0 0 15px var(--color-4);
+}

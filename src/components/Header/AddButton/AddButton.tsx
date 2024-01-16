@@ -1,9 +1,10 @@
 import React from 'react';
+import "./AddButton.scss"
 
-const AddButton = () => {
+const AddButton = (props:{children: string}) => {
 	return (
-		<div>
-			AddButton
+		<div className='add-button'>
+			{props.children}
 		</div>
 	);
 };

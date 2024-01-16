@@ -2,11 +2,21 @@
 	height: 80px;
 	width: 100%;
 
-	color: var(--color-text);
-
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 
-	background-color: var(--color-3);
+	.header__container{
+		height: 100%;
+		width: 100%;
+		
+		padding: 0 var(--container-padding);
+		
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
+		color: var(--color-text);
+		background-color: var(--color-3);
+	}
 }

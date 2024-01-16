@@ -8,10 +8,12 @@ import Logotype from './Logotype/Logotype';
 const Header = () => {
 	return (
 		<div className='header'>
-			<Logotype/>
-			<NavBar/>
-			<Burger/>
-			<AddButton/>
+			<div className="header__container">
+				<Logotype/>
+				<NavBar/>
+				<Burger/>
+				<AddButton>AddButton</AddButton>
+			</div>
 		</div>
 	);
 };

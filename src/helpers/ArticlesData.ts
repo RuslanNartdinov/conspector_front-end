@@ -4,7 +4,9 @@ export interface IArticles{
 	id: number,
 	views: number,
 	likes: number,
-	dislikes: number
+	dislikes: number,
+	liked : boolean,
+	disliked : boolean,
 }
 
 export const ArticlesData: Array<IArticles> = [
@@ -14,7 +16,9 @@ export const ArticlesData: Array<IArticles> = [
 		id: 0,
 		views: 134,
 		likes: 13,
-		dislikes: 3
+		dislikes: 3,
+		liked : false,
+		disliked : false,
 	},
 	{
 		name: "Синкай Макото: мегаполис, первая любовь и разлука",
@@ -22,7 +26,9 @@ export const ArticlesData: Array<IArticles> = [
 		id: 1,
 		views: 134,
 		likes: 13,
-		dislikes: 3
+		dislikes: 3,
+		liked : false,
+		disliked : false,
 	},
 	{
 		name: "Почему азитские културы такие разные",
@@ -30,6 +36,8 @@ export const ArticlesData: Array<IArticles> = [
 		id: 2,
 		views: 134,
 		likes: 13,
-		dislikes: 3
+		dislikes: 3,
+		liked : false,
+		disliked : false,
 	}
 ]

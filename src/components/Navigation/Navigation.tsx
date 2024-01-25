@@ -9,7 +9,7 @@ const Navigation = () => {
 			<div className="navigation__container">
 				{NavigationData.map((section)=>{
 					return (
-						<Section data={section}/>
+						<Section key={section.id} data={section}/>
 					)
 				})}
 			</div>

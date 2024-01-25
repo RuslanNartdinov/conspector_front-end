@@ -18,8 +18,8 @@ const NavBarButtons : Array<INavBarButton>
 	},
 	{
 		key: 2,
-		name: "Conspects",
-		link: "/conspects"
+		name: "My Abstracts",
+		link: "/my-abstracts"
 	},
 	{
 		key: 3,

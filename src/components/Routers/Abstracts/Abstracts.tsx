@@ -1,5 +1,5 @@
 import React from 'react';
-import MyAbstracts from '../MyAbstracts/MyAbstracts';
+import "./Abstracts.scss"
 
 const Abstracts = () => {
 	return (

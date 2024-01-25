@@ -20,40 +20,40 @@ const NavigationData : Array<INavigationSection> = [
 			{
 				name: "All",
 				link: "",
-				id: 0,
+				id: 1,
 			},
 			{
 				name: "Mathematic",
 				link: "",
-				id: 0,
+				id: 2,
 			},
 			{
 				name: "Programming",
 				link: "",
-				id: 0,
+				id: 3,
 			},
 			{
 				name: "History",
 				link: "",
-				id: 0,
+				id: 4,
 			},
 			{
 				name: "Botanic",
 				link: "",
-				id: 0,
+				id: 5,
 			}
 		]
 	},
 	{
 		name: "Statistics",
 		link: "",
-		id: 0,
+		id: 6,
 		children: []
 	},
 	{
 		name: "Global Search",
 		link: "",
-		id: 0,
+		id: 7,
 		children: []
 	}
 ]

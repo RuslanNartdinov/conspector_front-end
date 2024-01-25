@@ -1,11 +1,12 @@
 import React from 'react';
-import "./Logotype.scss"
+import "./Logotype.scss";
+import { Link } from 'react-router-dom';
 
 const Logotype = () => {
 	return (
-		<div className='logotype'>
+		<Link to="/" className='logotype'>
 			Conspector
-		</div>
+		</Link>
 	);
 };
 

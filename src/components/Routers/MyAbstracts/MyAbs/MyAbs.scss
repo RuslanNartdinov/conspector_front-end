@@ -1,0 +1,19 @@
+.my-abs{
+	width: 100%;
+	height: 50px;
+
+	border: 2px solid var(--color-4);
+	border-radius: 15px;
+
+	padding: 10px;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+.my-abs:hover{
+	box-shadow: 0 0 15px var(--color-4);
+}

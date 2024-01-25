@@ -8,13 +8,14 @@ import { INavBarButton } from '../../../../helpers/NavBarButtons';
 // 		</div>
 // 	);
 // };
+import { Link } from 'react-router-dom';
 
 const NavBarButton = (props : {button : INavBarButton}) => {
 	return (
 		<div className="nav-bar_button__container">
-			<div className='nav-bar_button'>
+			<Link to={props.button.link} className='nav-bar_button'>
 				{props.button.name}
-			</div>
+			</Link>
 		</div>
 	);
 };

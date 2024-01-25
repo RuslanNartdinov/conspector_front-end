@@ -1,3 +1,11 @@
 .logotype{
 	font-size: 25px;
+	background-color: inherit;
+	color: var(--color-text);
+
+	transition-duration: 0.3s;
+}
+.logotype:hover{
+	text-shadow: 0 0 15px var(--color-text);
+	cursor: pointer;
 }

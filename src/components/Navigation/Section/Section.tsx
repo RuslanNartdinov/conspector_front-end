@@ -10,7 +10,7 @@ const Section = (props : {data: INavigationSection}) => {
 			<div className="section__btns">
 			{props.data.children.map((button)=>{
 				return (
-					<NavigationBtn data={button}/>
+					<NavigationBtn key={button.id} data={button}/>
 				)
 			})}
 			</div>

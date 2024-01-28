@@ -1,33 +1,34 @@
-import { IArticles } from "../helpers/ArticlesData";
+import { IArticle } from "../helpers/ArticlesData";
+
 
 export const LIKE_ARTICLE = "LIKE_ARTICLE"
 export const DISLIKE_ARTICLE = "DISLIKE_ARTICLE"
-export const INITIALIZE_DATA = "INITIALIZE_DATA"
+export const INITIALIZE_ARTICLES = "INITIALIZE_DATA"
+export type articlesAction = typeof LIKE_ARTICLE | typeof DISLIKE_ARTICLE | typeof INITIALIZE_ARTICLES;
 
-export type articlesAction = typeof LIKE_ARTICLE | typeof DISLIKE_ARTICLE | typeof INITIALIZE_DATA;
 export interface IarticlesAction {
 	type : articlesAction,
 	id? : number,
-	data? : IArticles[]
+	data? : IArticle[]
 }
 
-export function likeArticleAction (id : number) : IarticlesAction {
+export function likeArticleAction (id : number){
 	return {
 		type : LIKE_ARTICLE,
 		id
 	}
 }
 
-export function dislikeArticleAction (id : number) : IarticlesAction {
+export function dislikeArticleAction (id : number){
 	return {
 		type : DISLIKE_ARTICLE,
 		id
 	}
 }
 
-export function initializeDataAction (data : IArticles[]) {
+export function initializeArticlesAction (data : IArticle[]) {
 	return {
-		type : INITIALIZE_DATA,
+		type : INITIALIZE_ARTICLES,
 		data
 	}
 }

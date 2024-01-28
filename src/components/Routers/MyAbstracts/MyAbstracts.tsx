@@ -1,21 +1,28 @@
 import React from 'react';
 import "./MyAbstracts.scss"
-import { IAbstractData } from '../../../helpers/AbstractsData';
-import { fakeFetch } from '../../../helpers/FakeFetch';
 import MyAbs from './MyAbs/MyAbs';
 import Input from "./Input/Input";
 
+import { fakeFetch } from '../../../helpers/FakeFetch';
+import { useSelector, useDispatch } from 'react-redux';
+import { initializeAbstractsAction } from '../../../actions/abstractsActions';
+import { RootState } from '../../../store';
+
 const MyAbstracts = () => {
-	const [myAbstracts, setMyAbstracts] = React.useState<IAbstractData[]>();
+	const abstracts = useSelector((state : RootState)=>state.abstracts)
+	const dispatch = useDispatch()
 
 	React.useEffect(()=>{
-		const handleFakeFetch = async () =>{
-			const api = new fakeFetch("some_linkXD");
-			const items = await api.get
-			setMyAbstracts(items.abstracts);
+		const handleInitializeData = async () => {
+		  const data = await new fakeFetch().get;
+		  dispatch(initializeAbstractsAction(data.abstracts))
 		}
-		handleFakeFetch();
-	},[myAbstracts])
+		handleInitializeData();
+	  }, [dispatch]);
+	if (abstracts instanceof Promise)
+	  	return (
+			<div className="">Loading ...</div>
+	)
 	return (
 		<div className="my-abstracts">
 			<div className="my-abstracts__search">
@@ -23,11 +30,11 @@ const MyAbstracts = () => {
 				<div className="search__input"><Input/></div>
 			</div>
 			<div className='my-abstracts__container'>
-				{myAbstracts?.map((abstract)=>{
+				{abstracts?.map((abstract)=>{
 					return (
-						<MyAbs key={abstract.id} data={abstract}/>
-					)
-				})}
+					<MyAbs key={abstract.id} data={abstract}/>
+					)}
+				)}
 			</div>
 		</div>
 	);

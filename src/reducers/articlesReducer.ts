@@ -1,6 +1,6 @@
-import { IArticles } from "../helpers/ArticlesData";
+import { IArticle } from "../helpers/ArticlesData";
 
-import { INITIALIZE_DATA, IarticlesAction } from "../actions/articlesActions";
+import { INITIALIZE_ARTICLES, IarticlesAction } from "../actions/articlesActions";
 import { LIKE_ARTICLE, DISLIKE_ARTICLE } from "../actions/articlesActions";
 // export interface IArticles{
 // 	name: string,
@@ -11,7 +11,7 @@ import { LIKE_ARTICLE, DISLIKE_ARTICLE } from "../actions/articlesActions";
 // 	dislikes: number
 // }
 
-const initialState : IArticles[] = [
+const initialState : IArticle[] = [
 	{
 		name: '',
 		description: '',
@@ -24,17 +24,21 @@ const initialState : IArticles[] = [
 	}
 ]
 
-export function articlesReducer (state = initialState, action : IarticlesAction) : IArticles[] | Promise<IArticles[]> {
+export function articlesReducer (state = initialState, action : IarticlesAction) : IArticle[] | Promise<IArticle[]> {
 	switch (action.type) {
 		case LIKE_ARTICLE :
 			return state.map(article=>{
 
+				if(article.liked)
+					return article
 				if(article.id === action.id)
 				{
 					article.liked = true;
-					article.disliked = false;
-					article.dislikes--;
 					article.likes++;
+					if(article.disliked){
+						article.disliked = false;
+						article.dislikes--;
+					}
 				}
 
 				return article
@@ -42,18 +46,22 @@ export function articlesReducer (state = initialState, action : IarticlesAction)
 		case DISLIKE_ARTICLE :
 			return state.map(article=>{
 
+				if(article.disliked)
+					return article
 				if(article.id === action.id)
 				{
 					article.disliked = true;
-					article.liked = false;
-					article.likes--;
 					article.dislikes++;
+					if(article.liked){
+						article.liked = false;
+						article.likes--;
+					}
 				}
 
 				return article
 			})
-		case INITIALIZE_DATA :
-			if(typeof action.data == "undefined")
+		case INITIALIZE_ARTICLES :
+			if(typeof action.data === "undefined")
 				return state
 			return action.data
 		default : 

@@ -1,4 +1,4 @@
-export interface IArticles{
+export interface IArticle{
 	name: string,
 	description: string,
 	id: number,
@@ -9,7 +9,7 @@ export interface IArticles{
 	disliked : boolean,
 }
 
-export const ArticlesData: Array<IArticles> = [
+export const ArticlesData: Array<IArticle> = [
 	{
 		name: "Python с 0 до Junior Developer",
 		description: "Расскажем и покажем как стать программистом на примере профессии Backend-разработчик",

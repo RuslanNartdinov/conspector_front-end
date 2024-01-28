@@ -1,9 +1,9 @@
-export interface IAbstractData{
+export interface IAbstract{
 	name: string,
 	id: number
 }
 
-export const AbstractData: Array<IAbstractData> = [
+export const AbstractData: Array<IAbstract> = [
 	{
 		name: "Dijkstra's algorithm",
 		id: 0

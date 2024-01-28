@@ -1,8 +1,8 @@
 import React from 'react';
 import "./MyAbs.scss"
-import { IAbstractData } from '../../../../helpers/AbstractsData';
+import { IAbstract} from '../../../../helpers/AbstractsData';
 
-const MyAbs = (props : {data : IAbstractData}) => {
+const MyAbs = (props : {data : IAbstract}) => {
 	return (
 		<div className='my-abs' key={props.data.id}>
 			{props.data.name}

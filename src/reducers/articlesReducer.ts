@@ -32,6 +32,8 @@ export function articlesReducer (state = initialState, action : IarticlesAction)
 				if(article.id === action.id)
 				{
 					article.liked = true;
+					article.disliked = false;
+					article.dislikes--;
 					article.likes++;
 				}
 
@@ -43,6 +45,8 @@ export function articlesReducer (state = initialState, action : IarticlesAction)
 				if(article.id === action.id)
 				{
 					article.disliked = true;
+					article.liked = false;
+					article.likes--;
 					article.dislikes++;
 				}
 
